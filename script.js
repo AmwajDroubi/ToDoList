@@ -7,6 +7,9 @@ addBtn.addEventListener('click', function () {
     if (taskcheck == "") {
         return;
     }
+    if (newTask.innerText.includes(taskcheck)) {
+        return;
+    }
     const task = document.createElement('div');
     task.classList.add('task');
     task.innerHTML = ` <input type="checkbox">
