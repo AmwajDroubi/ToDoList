@@ -7,9 +7,16 @@ addBtn.addEventListener('click', function () {
     if (taskcheck == "") {
         return;
     }
-    if (newTask.innerText.includes(taskcheck)) {
-        return;
+
+    const labels = newTask.querySelectorAll('label');
+
+
+    for (let label of labels) {
+        if (label.innerText == taskcheck) {
+            return;
+        }
     }
+
     const task = document.createElement('div');
     task.classList.add('task');
     task.innerHTML = ` <input type="checkbox">
